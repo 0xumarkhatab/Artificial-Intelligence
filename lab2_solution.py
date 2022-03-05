@@ -31,10 +31,10 @@ print(vehicleWeight({"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600
 
 # Task 4
 def sortTuple(tupleSort):
-  return sorted(tupleSort)  
+  return sorted(tupleSort,key=lambda x:x[1])  
   pass
   # LAB (end solution)
-sortTuple((3,2,43))
+sortTuple((('a', 23), ('b', 37), ('c', 11), ('d',29)))
 
 
 # Task 5
