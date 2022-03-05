@@ -21,3 +21,10 @@ def findAndReplaceValue(sampleList, val):
   return sampleList;  
   # LAB (end solution)
 print(findAndReplaceValue([1,2,3,2,23,4,1,2],2 ))
+
+# Task 3
+def vehicleWeight(vehicleDict):
+  return [x.upper() for x,y in vehicleDict.items() if y>5000]
+  pass
+  # LAB (end solution)
+print(vehicleWeight({"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}))
