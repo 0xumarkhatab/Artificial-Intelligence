@@ -35,3 +35,14 @@ def sortTuple(tupleSort):
   pass
   # LAB (end solution)
 sortTuple((3,2,43))
+
+
+# Task 5
+def checkSameTuple(checkTuple):
+  return sum([item==checkTuple[0] for item in checkTuple ])==len(checkTuple)
+
+  pass
+ 
+  # LAB (end solution)
+print (checkSameTuple((1,1)) )
+
