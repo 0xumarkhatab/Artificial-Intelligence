@@ -28,3 +28,10 @@ def vehicleWeight(vehicleDict):
   pass
   # LAB (end solution)
 print(vehicleWeight({"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}))
+
+# Task 4
+def sortTuple(tupleSort):
+  return sorted(tupleSort)  
+  pass
+  # LAB (end solution)
+sortTuple((3,2,43))
