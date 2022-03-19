@@ -105,3 +105,33 @@ class Rectangle():
 newRectangle = Rectangle(12, 10)
 print(newRectangle.rectangle_area())
 
+
+
+#Question 4
+
+
+import queue
+
+class myLifoQueue:
+  stack = queue.LifoQueue()
+  def put(self,item):
+    self.stack.put(item)
+    return True
+  def get(self):
+    return self.stack.get()
+  def empty(self):
+    return self.stack.empty()
+  
+  
+
+
+
+q = myLifoQueue()
+#insert items at the head of the queue 
+for x in range(4):
+    q.put(str(x))
+#remove items from the head of the queue 
+while not q.empty():
+    print(q.get(), end=" ")
+print()
+
