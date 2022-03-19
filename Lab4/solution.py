@@ -51,19 +51,28 @@ class wordProbability:
     self.count=c
     self.probability=p
   def print(self):
-    print('',self.word,' ',self.count,' ',self.probability)
+    print('',self.word,'\t\t',self.count,'\t',self.probability)
 
 
 
+def printWord(word):
+  word.print()
 
-def countProbability(words):
-  nonduplicated=set(content1) # removing duplicates
+def printWords(words):
+  print(f'\n\t\t--Probabilties--\n')
+  print(f'Word\t\tCount\t Probabilty\n')
+  for x in words:
+    printWord(x)
+  
+
+
+def countProbability(words,probabilities):
+  nonduplicated=set(words) # removing duplicates
   length=len(words)
-  probabilities=deque()
   for x in nonduplicated:
     wordCount=words.count(x)  
-    eleProb=" "+str(wordCount)+"/"+str(length)
     element=wordProbability(x,wordCount,length)
+    #element.print()
     probabilities.append(element)
 
   return probabilities
@@ -72,9 +81,14 @@ content1 = getWords("file1.txt")
 content2 = getWords("file2.txt")
 content3 = getWords("file3.txt")
 content4 = getWords("file4.txt")
+probabilities=deque()
+probabilities = countProbability(content1,probabilities)
+probabilities =  countProbability(content2,probabilities)
+probabilities =  countProbability(content3,probabilities)
+probabilities =  countProbability(content4,probabilities)
 
-for x in countProbability(content1):
-  x.print()
+printWords(probabilities)
+
 
 
 
