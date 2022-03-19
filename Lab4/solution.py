@@ -1,7 +1,7 @@
 # Question 1
 import re
-
-def isAccepted(string):
+from collections import deque
+def removeNumeralWords(string):
  
     # Make own character set and pass
     # this as argument in compile method
@@ -14,18 +14,34 @@ def isAccepted(string):
          
     else:
         return False
-   
+def givePureEnglish(string):
+      regex = re.compile('[a-zA-Z]')
+      newStr=""
+      for x in string:
+        if(regex.search(x) !=None ):
+          newStr+=x
+        
+      return newStr
+
+
 def getWords(filename):
   fname="/content/"+filename;
   file=open(fname,"r")
   content=file.read()
   content=content.lower()
   content= content.split(sep=' ') # separating words
-  return content
+  words=[]
+  for x in content:
+    if (removeNumeralWords(x)==True):
+      purified = givePureEnglish(x)
+      words.append(purified)
+
+  return words
 
 
 
-print(getWords("file1.txt"))
-print(getWords("file2.txt"))
-print(getWords("file3.txt"))
-print(getWords("file4.txt"))
+content1 = getWords("file1.txt")
+
+content2 = getWords("file2.txt")
+content3 = getWords("file3.txt")
+content4 = getWords("file4.txt")
