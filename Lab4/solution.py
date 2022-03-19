@@ -4,6 +4,7 @@ def getWords(filename):
   file=open(fname,"r")
   content=file.read()
   content=content.lower()
+  content= content.split(sep=' ') # separating words
   return content
 
 
